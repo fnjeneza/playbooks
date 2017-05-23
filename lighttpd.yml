@@ -13,7 +13,7 @@
   - name: "Install php7-cgi"
     apt: name=php7.0-cgi state=present
 
-  - name: "Install php6.0-xml"
+  - name: "Install php7.0-xml"
     apt: name=php7.0-xml state=present
 
   - name: "Install php7.0-gd"
