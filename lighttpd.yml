@@ -1,7 +1,7 @@
 
 ---
-# Install dokuwiki
-- name: "Setup dokuwiki"
+# Install lighttpd
+- name: "Setup lighttpd"
   hosts: mbwira
 
   become: true
