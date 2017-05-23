@@ -2,8 +2,7 @@
 ---
 # Install lighttpd
 - name: "Setup lighttpd"
-  hosts: mbwira
-
+  hosts: all
   become: true
 
   tasks:
