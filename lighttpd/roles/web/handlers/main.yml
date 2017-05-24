@@ -1,0 +1,9 @@
+- name: Enable fastcgi
+  command: lighty-enable-mod fastcgi
+
+- name: Enable fastcgi-php
+  command: lighty-enable-mod fastcgi-php
+
+- name: Restart lighttpd
+  service: name=lighttpd state=restarted
+

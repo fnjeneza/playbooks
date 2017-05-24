@@ -1,0 +1,8 @@
+---
+# Install lighttpd
+- name: "Setup lighttpd"
+  hosts: webserver
+  become: true
+
+  roles:
+    - web

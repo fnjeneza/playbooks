@@ -1,0 +1,14 @@
+---
+- name: "Install lighttpd"
+  apt: name={{ item }} state=present
+  with_items:
+    - lighttpd
+    - php7.0-cgi
+    - php7.0-xml
+    - php7.0-gd
+
+  notify:
+    - Enable fastcgi
+    - Enable fastcgi-php
+    - Restart lighttpd
+
