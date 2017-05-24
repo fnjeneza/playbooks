@@ -1,0 +1,3 @@
+# Install lighttpd
+- name: "Install lighttpd"
+  apt: name=lighttpd state=present

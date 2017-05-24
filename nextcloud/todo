@@ -1,0 +1,7 @@
+download nextcloud
+extract it
+mv it to {{server_dir}}
+chown www-data/www-data
+chmod 0644
+
+check checksum for the archive

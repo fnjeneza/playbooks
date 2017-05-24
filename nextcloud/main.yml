@@ -1,0 +1,14 @@
+# Install nextcloud with lighttpd
+- name: Configure and deploy the webserve and application code
+  hosts: web-server
+  become: true
+
+  roles:
+    - web
+
+- name: Configure and deploy the database server
+  hosts: db-server
+  become: true
+
+  roles:
+    - db

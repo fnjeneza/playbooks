@@ -1,0 +1,9 @@
+# Download nexcloud archive and copy extract it in the server folder
+- name: mkdir /srv/html
+  file: path=/srv/html state=directory
+
+- name: Download nextcloud
+  unarchive:
+    src: https://download.nextcloud.com/server/releases/nextcloud-12.0.0.tar.bz2
+    dest: /srv/html
+    remote_src: true
