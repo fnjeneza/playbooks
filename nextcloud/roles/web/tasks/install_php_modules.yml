@@ -13,7 +13,7 @@
     - php7.0-zip
 
   notify:
-    - Restart lighttpd
     - Enable fastcgi
     - Enable fastcgi-php
+    - Restart lighttpd
 
