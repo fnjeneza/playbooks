@@ -2,3 +2,9 @@
 - name: "Restart lighttpd"
   service: name=lighttpd state=restarted
 
+- name: Enable fastcgi
+  command: lighttpd-enable-mod fastcgi
+
+- name: Enable fastcgi-php
+  command: lighttpd-enable-mod fastcgi-php
+
