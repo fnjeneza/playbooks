@@ -3,6 +3,7 @@
   become_user: postgres
   postgresql_user:
     name: nextcloud
+    password: "{{ nextcloud_user_password }}"
     state: present
 
 - name: Create a nextcloud database
@@ -10,5 +11,3 @@
   postgresql_db:
     name: nextcloud
     owner: nextcloud
-
-

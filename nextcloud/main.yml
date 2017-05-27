@@ -10,5 +10,8 @@
   hosts: db-server
   become: true
 
+  vars_files:
+    - group_vars/vars
+
   roles:
     - db
