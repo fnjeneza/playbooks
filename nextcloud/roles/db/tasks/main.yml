@@ -1,3 +1,2 @@
-# Install postgresql
-- name: Install postgresql
-  apt: name=postgres state=present
+- include: install_psql.yml
+- include: setup_db.yml

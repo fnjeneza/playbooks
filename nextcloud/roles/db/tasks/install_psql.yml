@@ -1,0 +1,14 @@
+# Install postgresql
+- name: "Install postgresql"
+  apt: name={{ item }} state=present
+  with_items:
+    - postgresql
+    - postgresql-contrib
+    - python-psycopg2
+
+- name: Set postgres user password
+  user:
+    name: postgres
+    update_password: on_create
+    password: $6$BMn6OdIP7lOzPmG2$6O0eFgR7HVUqq6.6FuylvCRVkSke68xMfyQm02sKyIoR3XeXGr.ZR8Cq8C2zj0pp1NXc7evbluhr2.QUnd5Ou0
+

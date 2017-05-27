@@ -1,0 +1,14 @@
+# Set up a database to be used by postgresql
+- name: "create postgres database user: nextcloud"
+  become_user: postgres
+  postgresql_user:
+    name: nextcloud
+    state: present
+
+- name: Create a nextcloud database
+  become_user: postgres
+  postgresql_db:
+    name: nextcloud
+    owner: nextcloud
+
+
