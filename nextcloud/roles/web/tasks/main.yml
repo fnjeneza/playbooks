@@ -1,3 +1,3 @@
 - include: install_lighttpd.yml
 - include: install_php_modules.yml
-- include: download_nextcloud.yml
+- include: deploy_nextcloud.yml
