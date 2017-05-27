@@ -5,3 +5,8 @@ chown www-data/www-data
 chmod 0644
 
 check checksum for the archive
+
+download if not exists.
+Override nextcloud folder?
+set variable to true after download
+Override nextcloud database?

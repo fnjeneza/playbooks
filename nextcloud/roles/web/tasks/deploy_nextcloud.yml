@@ -2,7 +2,7 @@
 - name: mkdir /srv/html
   file: path=/srv/html state=directory
 
-- name: Deploy nextcloud
+- name: Download nextcloud
   unarchive:
     src: https://download.nextcloud.com/server/releases/nextcloud-12.0.0.tar.bz2
     dest: /srv/html
@@ -10,3 +10,15 @@
     owner: www-data
     remote_src: true
 
+- name: Setup nextcloud
+  become_user: www-data
+  command: |
+      php occ maintenance:install --database "pgsql"
+      --database-name "{{ nextcloud_database }}"
+      --database-user "{{ nextcloud_username }}"
+      --database-pass "{{ nextcloud_user_password }}"
+      --admin-user "postgres"
+      --admin-pass "{{ postgres_password }}"
+      --data-dir "/srv/html/nextcloud/data"
+  args:
+    chdir: /srv/html/nextcloud

@@ -1,7 +1,6 @@
 ---
-include: vault
-
 nextcloud_username: "{{ vault_nextcloud_username}} "
 nextcloud_user_password: "{{ vault_nextcloud_user_password }}"
 nextcloud_database: "{{ vault_nextcloud_database }}"
 
+postgres_password: "{{ vault_postgres_password }}"
