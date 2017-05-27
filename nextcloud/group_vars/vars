@@ -1,3 +1,4 @@
 ---
-nextcloud_user_password: 123456
-#nextcloud_user_password: ,GD6r[,p
+include: vault
+
+nextcloud_user_password: "{{ vault_nextcloud_user_password }}"
