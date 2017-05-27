@@ -2,8 +2,10 @@
 - name: mkdir /srv/html
   file: path=/srv/html state=directory
 
-- name: Download nextcloud
+- name: Deploy nextcloud
   unarchive:
     src: https://download.nextcloud.com/server/releases/nextcloud-12.0.0.tar.bz2
     dest: /srv/html
+    group: www-data
+    owner: www-data
     remote_src: true
