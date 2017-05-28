@@ -14,11 +14,12 @@
   become_user: www-data
   command: |
       php occ maintenance:install --database "pgsql"
-      --database-name "{{ nextcloud_database }}"
-      --database-user "{{ nextcloud_username }}"
-      --database-pass "{{ nextcloud_user_password }}"
-      --admin-user "postgres"
-      --admin-pass "{{ postgres_password }}"
-      --data-dir "/srv/html/nextcloud/data"
+      --database-host "{{ ansible_hostname }}"
+      --database-name "{{ nextcloud_db_name }}"
+      --database-user "{{ nextcloud_db_login}}"
+      --database-pass "{{ nextcloud_db _pass }}"
+      --admin-user "{{ nextcloud_admin_name }}"
+      --admin-pass "{{ nextcloud_admin_pass }}"
+      --data-dir " {{ nextcloud_data_dir }}"
   args:
     chdir: /srv/html/nextcloud

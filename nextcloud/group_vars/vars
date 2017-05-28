@@ -1,6 +1,9 @@
 ---
-nextcloud_username: "{{ vault_nextcloud_username}} "
-nextcloud_user_password: "{{ vault_nextcloud_user_password }}"
-nextcloud_database: "{{ vault_nextcloud_database }}"
+nextcloud_db_name: "{{ vault_nextcloud_db_name }}"
+nextcloud_db_login: "{{ vault_nextcloud_db_login }}"
+nextcloud_db_pass: "{{ vault_nextcloud_db_pass }}"
 
-postgres_password: "{{ vault_postgres_password }}"
+nextcloud_admin_login: "{{ vault_nextcloud_admin_login }}"
+nextcloud_admin_pass: "{{ vault_nextcloud_admin_pass }}"
+
+nextcloud_data_dir: "/srv/html/nextcloud/data"
