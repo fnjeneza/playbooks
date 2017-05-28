@@ -1,4 +1,6 @@
 ---
+nextcloud_db_server: "{{vault_nextcloud_db_server }}"
+
 nextcloud_db_name: "{{ vault_nextcloud_db_name }}"
 nextcloud_db_login: "{{ vault_nextcloud_db_login }}"
 nextcloud_db_pass: "{{ vault_nextcloud_db_pass }}"
