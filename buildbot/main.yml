@@ -1,0 +1,6 @@
+#Install Buildbot master
+- name: "Install buildbot master"
+  hosts: buildbot
+
+  roles:
+      - master

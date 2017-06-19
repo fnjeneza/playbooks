@@ -1,0 +1,34 @@
+- name: "Install Build-essential python3-dev"
+  become: true
+  apt:
+      name: "{{ item }}"
+      state: present
+  with_items:
+    - build-essential
+    - python3-dev
+    - python3-venv
+
+- name: "Setup a virtualenv"
+  command: python3 -m venv buildbot
+
+- name: "Install buildbot"
+  pip:
+      name: "{{ item }}"
+      virtualenv: "{{ ansible_user_dir }}/buildbot"
+  with_items:
+      - wheel
+      - setuptools
+      - buildbot[bundle]
+
+- name: "Create buildbot master"
+  command: "{{ ansible_user_dir }}/buildbot/bin/buildbot create-master master"
+
+- name: "Copy config file"
+  copy:
+      src: master/master.cfg.sample
+      dest: master/master.cfg
+      remote_src: True
+  notify:
+      - start buildbot
+
+
