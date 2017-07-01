@@ -1,6 +1,14 @@
 #Install Buildbot master
 - name: "Install buildbot master"
-  hosts: buildbot
+  hosts: buildbot-master
 
   roles:
       - master
+
+- name: "Install buildbot slave"
+  hosts: buildbot-worker
+
+  vars:
+      master_address: 10.198.127.97
+  roles:
+      - slave
