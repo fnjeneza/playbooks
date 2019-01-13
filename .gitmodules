@@ -1,0 +1,9 @@
+[submodule "docker"]
+	path = docker
+	url = git@github.com:fnjeneza/docker.git
+[submodule "conf"]
+	path = conf
+	url = git@github.com:fnjeneza/conf.git
+[submodule "vim"]
+	path = vim
+	url = git@github.com:fnjeneza/vim.git
